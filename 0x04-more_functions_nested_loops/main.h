@@ -1,5 +1,5 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef _putchar.c
+#define _putchar.c
 
 int _putchar(char c);
 
