@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * _isupper - check for capitalized letter
- * @c: ascii character buffer
- * Return: 1 for true, 0 for false
+ *_isupper - a function that checks for uppercase characters
+ *@c: a variable that stores letters
+ *Return: Returns a value of 1 if the variable c contains an uppercase
+ *letter.
  */
+
 int _isupper(int c)
 {
-	int i = 65;
-
-	for (; i <= 90; i++)
+	if (c >= 'A' && c <= 'Z')
 	{
-		if (c == i)
-			return (1);
-		else
-			return (0);
+		return (1);
 	}
-	return (0);
+	else
+	{
+		return (0);
+	}
 }
