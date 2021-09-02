@@ -1,26 +1,29 @@
 #include "main.h"
 
 /**
- * print_diagonal - print stroke
- * @n: number of space end with stroke
+ * print_diagonal - draw a diagonal line
+ * @n: number of times the '\' char is printed
+ * Description: Can only use _putchar to print
  */
-
 void print_diagonal(int n)
 {
-	int i = 0;
-	
-	while (i < n)
-	{
-		if ( i > 0)
-		{
-			int x = 0;
+	int c, i;
 
-			for (; x < i; x++)
-				_putchar(32);
+	c = 0;
+
+	while (n > 0)
+	{
+		i = c;
+		while (i > 0)
+		{
+			_putchar(32);
+			i--;
 		}
-		if (n > 0)
-			_putchar(92);
+		_putchar(92);
 		_putchar(10);
-		i++;
+		c++;
+		n--;
 	}
+	if (c < 1)
+		_putchar(10);
 }
