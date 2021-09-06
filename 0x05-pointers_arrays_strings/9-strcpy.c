@@ -38,4 +38,5 @@ char *_strcpy(char *dest, char *src)
 		cnt++;
 	}
 	return (dest);
+}
 
