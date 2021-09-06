@@ -1,9 +1,11 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * _strcpy - copy from source and paste to destination
  * @dest: target destination for copy
  * @src: copy from
+ * Return: data from src will be available on dest
  */
 
 char *_strcpy(char *dest, char *src)
@@ -15,6 +17,7 @@ char *_strcpy(char *dest, char *src)
 		dest[len] = *(src + len);
 		len++;
 	}
+	dest[len] = 0;
 
 	return (dest);
 }
