@@ -1,33 +1,33 @@
 #include "main.h"
 
 /**
- * _strpbrk - check some string
- * @s: contains strings
- * @accept: some strings
- * Return: ramaining string
+ * _strpbrk - Search a string for any of a set of bytes.
+ * @s: string
+ * @accept: string to match
+ * Return: Pointer to the byte in `s` that matches one of the bytes in `accept`
+ * or NULL if no such byte is found.
  */
 
 char *_strpbrk(char *s, char *accept)
 {
-	int i = 0;
+	int i, j;
+	char *p;
 
-	while (s)
+	i = 0;
+	while (s[i] != '\0')
 	{
-again:
-		if (*s == 0)
-			break;
-		if (*s != accept[i])
+		j = 0;
+		while (accept[j] != '\0')
 		{
-			i++;
-			if (accept[i] == 0)
+			if (accept[j] == s[i])
 			{
-				i = 0;
-				s++;
+				p = &s[i];
+				return (p);
 			}
-			goto again;
+			j++;
 		}
-		else
-			return (s);
+		i++;
 	}
-	return ("\0");
+
+	return (0);
 }
