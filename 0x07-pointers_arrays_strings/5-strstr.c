@@ -1,51 +1,34 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strstr - substring to check against string
- * @haystack: strings of words
- * @needle: search word
- * Return: segment words searched
+ * _strstr - locate a substring
+ * @haystack: string
+ * @needle: string substring
+ * Return: Pointer to beginning of substring, or NULL if not found.
  */
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, x = 0, cnt = 0;
+	int i, j, c;
 
-	while (haystack[x] != 0)
+	i = 0;
+	c = 0;
+	while (haystack[i] != '\0')
 	{
-again:
-		if (haystack[x] != needle[i] && haystack[x] != 0)
+		j = 0;
+		while (needle[j + c] != '\0' && haystack[i + c] != '\0'
+		       && needle[j + c] == haystack[i + c])
 		{
-			x++;
-			cnt++;
-			goto again;
+			if (haystack[i + c] != needle[j + c])
+				break;
+			c++;
 		}
-		else if (haystack[x] == needle[i] && needle[i] != 0 && haystack[x] != 0)
-		{
-			const int j = cnt;
-
-			x++;
-			i++;
-			if (haystack[x] == needle[i])
-			{
-				if (needle[i + 1] == 0)
-				{
-					int i = 0;
-
-					for (; i < j; i++)
-						haystack++;
-					return (haystack);
-				}
-				goto again;
-			}
-			else
-			{
-				i = 0;
-				cnt = x;
-				goto again;
-			}
-		}
-		else
-			return ("\0");
+		if (needle[j + c] == '\0')
+			return (&haystack[i]);
+		j++;
+		i++;
 	}
+
+	return (NULL);
 }
