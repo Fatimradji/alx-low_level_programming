@@ -1,4 +1,4 @@
-i#include <stdio.h>
+#include <stdio.h>
 
 /**
  * main - start of program
@@ -13,4 +13,3 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) **argv)
 
 	return (0);
 }
-
