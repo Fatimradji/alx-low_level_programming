@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.c"
 
 /**
  * _strdup - copy string and manipulate
