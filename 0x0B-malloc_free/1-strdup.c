@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * _strdup - copy string and manipulate
