@@ -20,6 +20,6 @@ char *create_array(unsigned int size, char c)
 	{
 		cc[size] = c;
 	}
-          cc[0] = c;
+	cc[0] = c;
 	return (cc);
 }
